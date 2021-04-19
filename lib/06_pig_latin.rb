@@ -1,9 +1,15 @@
 
 def translate (words)
     
-    if
+    if words.start_with?('squ') 
+        return words[3..] + words[0, 3] + "ay"
+    end
 
     if words.start_with?('sch') 
+        return words[3..] + words[0, 3] + "ay"
+    end
+
+    if words[0, 3] =~ /\A(?i:(?![aeiou])[a-z]){3}/
         return words[3..] + words[0, 3] + "ay"
     end
     
@@ -11,13 +17,8 @@ def translate (words)
         return words[2..] + words[0, 2] + "ay"
     end
 
-    if words[0, 3] =~ /\A(?i:(?![aeiou])[a-z]){2}/
-        return words[3..] + words[0, 3] + "ay"
-    end
+    
 
-    if words.start_with?('sch') 
-        return words[3..] + words[0, 3] + "ay"
-    end
     
     if words.start_with?('qu') 
         return words[2..] + words[0, 2] + "ay"
